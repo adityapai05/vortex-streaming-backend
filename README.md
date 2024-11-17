@@ -1,95 +1,134 @@
-# Employee Management System 💼
+# **Vortex Video Streaming App - Backend**
 
-An **Employee Management System** built with **React**, **TailwindCSS**, and **LocalStorage** to streamline task management and improve employee productivity. This system allows both admin and employee users to manage tasks, track progress, and maintain an efficient workflow.
+Welcome to the **Vortex Video Streaming App Backend**! This repository contains the backend services powering the Vortex application, a video streaming platform. The backend is built with a focus on learning and implementing modern backend development practices.  
 
----
-
-## 📸 **Screenshots**:
-
-*(Insert images here)*
+This project is currently **under development** and serves as a learning exercise for building robust APIs, handling user authentication, and managing video streaming-related functionalities.
 
 ---
 
-## 🌟 **Key Features**:
+## **Features**
 
-### Admin Dashboard
-- **Add Users**: Admins can add new users (employees).
-- **Create Tasks**: Admins can create tasks for employees.
-- **Task Tracking**: View employee stats with task statuses such as "New," "Accepted," "Completed," and "Failed."
+- **User Authentication**:  
+  Secure user registration and login using hashed passwords and JWT-based authentication.
 
-### Employee Dashboard
-- **Task Management**: Employees can accept tasks, mark them as completed, or fail them.
-- **Task Counter**: Real-time counters showing the number of tasks in each status (New, Accepted, Completed, Failed).
-- **Search & Filter**: Filter tasks by category and search for tasks by title.
-- **Task Cards**: Tasks are displayed as cards, showing details like title, description, category, date, priority, and actions (Accept, Complete, Fail).
+- **Role Management**:  
+  Separate roles for Admin and User with role-based access control (RBAC).
 
-### General Features
-- **Persistent Login**: Local Storage is used to remember the logged-in user, ensuring a seamless experience across sessions.
-- **Responsive Design**: Fully responsive, ensuring smooth user experience on all devices.
+- **Video Management**:  
+  APIs for uploading, updating, and managing video metadata (title, description, etc.).
+
+- **Video Streaming**:  
+  Serve videos using optimized chunk-based streaming (to be implemented).
+
+- **Middleware Integration**:  
+  - CORS: Configurable for secure cross-origin requests.  
+  - Cookie Parsing: For managing session-related tokens.  
+  - Error Handling: Standardized error handling with custom error and response classes.
+
+- **Async Wrappers**:  
+  Industry-standard async handlers for streamlined request management.
 
 ---
 
-## 🚀 **Installation**:
+## **Tech Stack**
 
-To run the **Employee Management System** locally, follow these steps:
+- **Language**: JavaScript (ES6+)
+- **Runtime**: Node.js
+- **Framework**: Express.js
+- **Database**: MongoDB (using Mongoose ODM)
+- **Authentication**: JWT-based with refresh tokens
+- **Middleware**: CORS, Cookie Parser, Express JSON/URL Encoders
 
-1. **Clone this repository**:
+---
+
+## **Getting Started**
+
+### **Prerequisites**
+
+- Node.js (v18+ recommended)  
+- MongoDB (running instance or MongoDB Atlas)  
+
+### **Installation**
+
+1. Clone this repository:
    ```bash
-   git clone https://github.com/adityapai05/employee-management-system.git
+   git clone https://github.com/yourusername/vortex-streaming-backend.git
+   cd vortex-streaming-backend
    ```
 
-2. **Navigate into the project directory**:
-   ```bash
-   cd employee-management-system
-   ```
-
-3. **Install the dependencies** (this project is created using `create-react-app`):
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-4. **Start the development server**:
+3. Set up environment variables:  
+   Create a `.env` file in the root directory and configure the following variables:
+   ```env
+   PORT=5000
+   MONGODB_URL=mongodb://localhost:27017/vortex
+   ACCESS_TOKEN_SECRET=<your_access_token_secret>
+   REFRESH_TOKEN_SECRET=<your_refresh_token_secret>
+   CORS_ORIGIN=http://localhost:3000
+   ```
+
+4. Start the server:
    ```bash
    npm run dev
    ```
 
-The application will be running on `http://localhost:3000`.
+5. Test the API endpoints using tools like Postman or cURL.
 
 ---
 
-## 📝 **Usage**:
+## **Project Structure**
 
-- **Admin**: Log in as an admin to add users, create tasks, and track employee task progress.
-- **Employee**: Log in as an employee to view tasks, accept them, and mark them as completed or failed.
-
----
-
-## 💻 **Technologies Used**:
-- **React**: Frontend framework for building the UI.
-- **TailwindCSS**: For styling the application.
-- **LocalStorage**: For storing user data and task information persistently.
-
----
-
-## 🤝 **Contributing**:
-
-Feel free to fork the repository, make changes, and submit a pull request with your improvements! All contributions are appreciated. 🙌
-
----
-
-## 💬 **Feedback**:
-
-I would love to hear your thoughts and feedback! Feel free to open issues or leave comments for suggestions. 😊
-
----
-
-## 🙏 **Acknowledgments**:
-
-A big thanks to **Sarthak Sharma** and **Sheryians Coding School** for inspiring this project! 🙏
-
----
-
-## 📄 **License**:
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
+vortex-video-streaming-backend/
+├── node_modules/        # Installed npm dependencies
+├── public/              # Public assets
+│   └── temp/            # Temporary storage for uploads
+├── src/                 # Source code
+│   ├── controllers/     # Controllers for handling business logic
+│   ├── middlewares/     # Custom middleware (e.g., auth, error handling)
+│   ├── models/          # MongoDB models for Mongoose
+│   ├── routes/          # API route definitions
+│   ├── utils/           # Utility functions (e.g., asyncHandler)
+│   ├── app.js           # Express application setup
+│   ├── constants.js     # Project constants (e.g., DB_NAME)
+│   └── db/              # Database connection logic
+├── .env                 # Environment variables
+├── .gitignore           # Files and folders to be ignored by Git
+├── .prettierignore      # Files and folders to be ignored by Prettier
+├── .prettierrc          # Prettier configuration
+├── package-lock.json    # Auto-generated lockfile for npm dependencies
+├── package.json         # Project metadata and scripts
+└── README.md            # Project documentation
+
+```
+
+---
+
+## **Development Progress**
+
+- [x] Basic Express server setup  
+- [x] MongoDB integration with Mongoose  
+- [x] User authentication with JWT  
+- [x] Middleware configuration (CORS, error handling, etc.)  
+
+---
+
+## **Contributing**
+
+This is a learning-focused project. If you'd like to contribute:
+1. Fork the repository.  
+2. Create a feature branch.  
+3. Submit a pull request with detailed explanations of your changes.  
+
+---
+
+## **Acknowledgements**
+
+- A huge shoutout to **[Hitesh Choudhary](https://github.com/hiteshchoudhary)** for his incredible videos and resources on backend development, which have been instrumental in guiding this project. 🎉  
+- Special thanks to the open-source community for creating tools and libraries used in this project.  
+
+---
